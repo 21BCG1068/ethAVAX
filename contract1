@@ -1,0 +1,23 @@
+pragma solidity ^0.8.0;
+
+contract ExceptionExample {
+    function requireStatement(uint256 num) public pure returns (uint256) {
+        // The require statement checks a condition and throws an exception if it fails.
+        // It is commonly used to validate inputs or enforce constraints.
+        require(num > 0, "Number must be greater than zero");
+        return num;
+    }
+    
+    function assertStatement(uint256 a, uint256 b) public pure returns (uint256) {
+        // The assert statement checks a condition and throws an exception if it fails.
+        // It is used to check for internal errors and invariants.
+        assert(a != b);
+        return a;
+    }
+    
+    function revertStatement() public pure {
+        // The revert statement immediately aborts the execution and reverts all changes.
+        // It can be used to handle exceptional conditions or invalid states.
+        revert("This function always reverts");
+    }
+}
